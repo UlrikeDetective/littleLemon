@@ -10,4 +10,16 @@ nav ul {
   display: flex;
   justify-content: space-around;
   font-family: 'Noto Sans Mono', monospace;
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+
+nav ul li a {
+  text-decoration: none; /* Remove underlines from links */
+  color: #333; /* Default link color */
+  transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+nav ul li a:hover {
+  color: #007bff; /* Change color on hover */
 }
