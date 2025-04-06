@@ -1,6 +1,6 @@
 main {
   padding: 1rem;
-  background-color: #ffffff; /* White background for main */
+  background-color: #ffffff;
   font-family: 'Noto Sans Mono', monospace;
 }
 
@@ -17,31 +17,38 @@ main h1 {
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;
+  text-align: center; /* Center the content */
 }
 
-.mario-adrian img,
-.restaurant img {
-  width: 100%;
-  max-width: 400px;
+/* Style for Mario and Adrian image */
+.mario-adrian img {
+  width: 700px; /* Set the width to 700px */
   height: auto;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem; /* Center horizontally and add margin below */
+  display: block; /* Ensure it respects margin settings */
+}
+
+/* Style for Restaurant image */
+.restaurant img {
+  width: 700px; /* Set the width to 700px */
+  height: auto;
+  margin: 0 auto 1rem; /* Center horizontally and add margin below */
+  display: block; /* Ensure it respects margin settings */
 }
 
 .dishes {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: center; /* Center the dishes horizontally */
+  gap: 10px; /* Space between the dishes */
 }
 
 .dish {
-  width: 30%;
-  min-width: 200px;
-  margin-bottom: 1rem;
+  width: auto; /* Adjust width to fit content */
   text-align: center;
 }
 
 .dish img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 200px; /* Set the height to 200px */
+  width: auto; /* Adjust width to maintain aspect ratio */
+  border-radius: 2px;
 }
