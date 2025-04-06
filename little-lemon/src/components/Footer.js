@@ -1,4 +1,5 @@
-// filepath: /Users/ulrike_imac_air/projects/LittleLemon/little-lemon/src/components/Footer.js
+import './Footer.css';
+
 function Footer() {
     return (
       <footer>

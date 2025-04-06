@@ -1,4 +1,5 @@
-// filepath: /Users/ulrike_imac_air/projects/LittleLemon/little-lemon/src/components/Main.js
+import './Main.css';
+
 function Main() {
     return (
       <main>

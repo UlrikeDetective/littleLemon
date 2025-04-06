@@ -1,0 +1,12 @@
+nav {
+  background-color: #b0c4de; /* Steel blue for navigation */
+  padding: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
