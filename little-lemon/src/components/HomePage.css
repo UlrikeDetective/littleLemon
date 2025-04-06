@@ -1,0 +1,55 @@
+.homepage {
+  padding: 1rem;
+  font-family: 'Noto Sans Mono', monospace;
+  background-color: #f0f8ff; /* Light blue background */
+}
+
+.mario-adrian,
+.dishes,
+.restaurant {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #ffffff; /* White background */
+}
+
+.mario-adrian h1,
+.dishes h1,
+.restaurant h1 {
+  font-family: 'Plaster', system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.mario-adrian img {
+  width: 700px;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.restaurant img {
+  width: 700px;
+  height: auto;
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.dishes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dish {
+  width: auto;
+  text-align: center;
+}
+
+.dish img {
+  height: 200px;
+  width: auto;
+  border-radius: 8px;
+}
