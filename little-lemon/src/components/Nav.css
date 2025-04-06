@@ -9,4 +9,5 @@ nav ul {
   margin: 0;
   display: flex;
   justify-content: space-around;
+  font-family: 'Noto Sans Mono', monospace;
 }
