@@ -9,3 +9,39 @@ main h1 {
   font-weight: 400;
   font-style: normal;
 }
+
+.mario-adrian,
+.dishes,
+.restaurant {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.mario-adrian img,
+.restaurant img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.dishes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.dish {
+  width: 30%;
+  min-width: 200px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.dish img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
