@@ -1,6 +1,22 @@
 import './Main.css';
+import { useState } from 'react';
 
 function Main() {
+  const [currentDishIndex, setCurrentDishIndex] = useState(0);
+  const dishes = [
+    { src: "/greek salad.jpg", alt: "Greek Salad", description: "Our famous Greek Salad, a refreshing mix of fresh vegetables and feta cheese." },
+    { src: "/restauranfood.jpg", alt: "Restaurant Food", description: "A glimpse of our diverse menu, offering something for everyone." },
+    { src: "/lemon dessert.jpg", alt: "Lemon Dessert", description: "Indulge in our Lemon Dessert, a sweet and tangy delight." }
+  ];
+
+  const nextDish = () => {
+    setCurrentDishIndex((prevIndex) => (prevIndex + 1) % dishes.length);
+  };
+
+  const prevDish = () => {
+    setCurrentDishIndex((prevIndex) => (prevIndex - 1 + dishes.length) % dishes.length);
+  };
+
   return (
     <main>
       <section className="mario-adrian">
@@ -13,17 +29,17 @@ function Main() {
       </section>
 
       <section className="dishes">
-        <div className="dish">
-          <img src="/greek salad.jpg" alt="Greek Salad" />
-          <p>Our famous Greek Salad, a refreshing mix of fresh vegetables and feta cheese.</p>
-        </div>
-        <div className="dish">
-          <img src="/restauranfood.jpg" alt="Restaurant Food" />
-          <p>A glimpse of our diverse menu, offering something for everyone.</p>
-        </div>
-        <div className="dish">
-          <img src="/lemon dessert.jpg" alt="Lemon Dessert" />
-          <p>Indulge in our Lemon Dessert, a sweet and tangy delight.</p>
+        <div className="carousel-container">
+          <button className="carousel-button prev" onClick={prevDish}>&lt;</button>
+          <div className="carousel-slide" style={{ transform: `translateX(-${currentDishIndex * 100}%)` }}>
+            {dishes.map((dish, index) => (
+              <div className="dish" key={index}>
+                <img src={dish.src} alt={dish.alt} />
+                <p>{dish.description}</p>
+              </div>
+            ))}
+          </div>
+          <button className="carousel-button next" onClick={nextDish}>&gt;</button>
         </div>
       </section>
 

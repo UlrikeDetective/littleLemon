@@ -17,38 +17,57 @@ main h1 {
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;
-  text-align: center; /* Center the content */
+  text-align: center;
 }
 
 /* Style for Mario and Adrian image */
 .mario-adrian img {
-  width: 700px; /* Set the width to 700px */
+  width: 700px;
   height: auto;
-  margin: 0 auto 1rem; /* Center horizontally and add margin below */
-  display: block; /* Ensure it respects margin settings */
+  margin: 0 auto 1rem;
+  display: block;
 }
 
 /* Style for Restaurant image */
 .restaurant img {
-  width: 700px; /* Set the width to 700px */
+  width: 700px;
   height: auto;
-  margin: 0 auto 1rem; /* Center horizontally and add margin below */
-  display: block; /* Ensure it respects margin settings */
+  margin: 0 auto 1rem;
+  display: block;
 }
 
 .dishes {
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-container {
   display: flex;
-  justify-content: center; /* Center the dishes horizontally */
-  gap: 10px; /* Space between the dishes */
+  align-items: center;
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 1.5s ease-in-out;
 }
 
 .dish {
-  width: auto; /* Adjust width to fit content */
+  width: 100%; /* Each dish takes up full width */
+  flex-shrink: 0; /* Prevent items from shrinking */
   text-align: center;
 }
 
 .dish img {
-  height: 200px; /* Set the height to 200px */
-  width: auto; /* Adjust width to maintain aspect ratio */
-  border-radius: 2px;
+  height: 200px;
+  width: auto;
+  border-radius: 8px;
+}
+
+.carousel-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #333;
 }
