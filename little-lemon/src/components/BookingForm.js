@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './BookingForm.css';
 
-function BookingForm({ availableTimes, setAvailableTimes }) {
+function BookingForm({ availableTimes, dispatch }) {
   const [formData, setFormData] = useState({
     date: '',
     time: '',
@@ -12,17 +12,16 @@ function BookingForm({ availableTimes, setAvailableTimes }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    // Dispatch an action to update available times when the date changes
+    if (name === 'date') {
+      dispatch({ type: 'UPDATE_TIMES', payload: value });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Reservation submitted:', formData);
-
-    // Example: Remove the selected time from availableTimes
-    setAvailableTimes((prevTimes) =>
-      prevTimes.filter((time) => time !== formData.time)
-    );
-
     alert('Reservation submitted successfully!');
   };
 
