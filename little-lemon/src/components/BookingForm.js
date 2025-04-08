@@ -9,6 +9,15 @@ function BookingForm() {
     occasion: '',
   });
 
+  const [availableTimes, setAvailableTimes] = useState([
+    '17:00',
+    '18:00',
+    '19:00',
+    '20:00',
+    '21:00',
+    '22:00',
+  ]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -21,7 +30,7 @@ function BookingForm() {
   };
 
   return (
-    <form className="booking-form" onSubmit={handleSubmit} style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}>
+    <form className="booking-form" onSubmit={handleSubmit}>
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
@@ -41,12 +50,11 @@ function BookingForm() {
         required
       >
         <option value="">Select a time</option>
-        <option value="17:00">17:00</option>
-        <option value="18:00">18:00</option>
-        <option value="19:00">19:00</option>
-        <option value="20:00">20:00</option>
-        <option value="21:00">21:00</option>
-        <option value="22:00">22:00</option>
+        {availableTimes.map((time, index) => (
+          <option key={index} value={time}>
+            {time}
+          </option>
+        ))}
       </select>
 
       <label htmlFor="guests">Number of guests</label>
@@ -69,6 +77,9 @@ function BookingForm() {
         onChange={handleChange}
         required
       >
+
+
+export default BookingForm;
         <option value="">Select an occasion</option>
         <option value="Birthday">Birthday</option>
         <option value="Anniversary">Anniversary</option>
