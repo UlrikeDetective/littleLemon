@@ -5,7 +5,7 @@ function BookingForm() {
   const [formData, setFormData] = useState({
     date: '',
     time: '',
-    guests: '',
+    guests: 1,
     occasion: '',
   });
 
@@ -21,28 +21,35 @@ function BookingForm() {
   };
 
   return (
-    <form className="booking-form" onSubmit={handleSubmit}>
-      <label htmlFor="date">Date:</label>
+    <form className="booking-form" onSubmit={handleSubmit} style={{ display: 'grid', maxWidth: '200px', gap: '20px' }}>
+      <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
-        id="date"
+        id="res-date"
         name="date"
         value={formData.date}
         onChange={handleChange}
         required
       />
 
-      <label htmlFor="time">Time:</label>
-      <input
-        type="time"
-        id="time"
+      <label htmlFor="res-time">Choose time</label>
+      <select
+        id="res-time"
         name="time"
         value={formData.time}
         onChange={handleChange}
         required
-      />
+      >
+        <option value="">Select a time</option>
+        <option value="17:00">17:00</option>
+        <option value="18:00">18:00</option>
+        <option value="19:00">19:00</option>
+        <option value="20:00">20:00</option>
+        <option value="21:00">21:00</option>
+        <option value="22:00">22:00</option>
+      </select>
 
-      <label htmlFor="guests">Number of Guests:</label>
+      <label htmlFor="guests">Number of guests</label>
       <input
         type="number"
         id="guests"
@@ -50,11 +57,11 @@ function BookingForm() {
         value={formData.guests}
         onChange={handleChange}
         min="1"
-        max="20"
+        max="10"
         required
       />
 
-      <label htmlFor="occasion">Occasion:</label>
+      <label htmlFor="occasion">Occasion</label>
       <select
         id="occasion"
         name="occasion"
@@ -65,9 +72,26 @@ function BookingForm() {
         <option value="">Select an occasion</option>
         <option value="Birthday">Birthday</option>
         <option value="Anniversary">Anniversary</option>
+        <option value="Casual Meal">Casual Meal/Get-Together</option>
+        <option value="Date Night">Date Night</option>
+        <option value="Family Dinner">Family Dinner</option>
+        <option value="Meeting">Meeting/Business Lunch/Dinner</option>
+        <option value="Celebration">Celebrating a Graduation/Promotion/New Job</option>
+        <option value="Thank You">Thank You/Appreciation</option>
+        <option value="Treat Yourself">Treating Yourself</option>
+        <option value="Trying New Cuisine">Trying a New Cuisine</option>
+        <option value="Support Local">Supporting a Local Business</option>
+        <option value="Just Because">Just Because!</option>
+        <option value="Engagement">Engagement Celebration</option>
+        <option value="Reunion">Reunion (Family/Friends/School)</option>
+        <option value="Pre-Event Dinner">Pre-Theater/Concert Dinner</option>
+        <option value="Post-Event Meal">Post-Theater/Concert Meal</option>
+        <option value="Project Success">Successful Project Completion</option>
+        <option value="Something new">Something new</option>
+        <option value="Other">Other</option>
       </select>
 
-      <button type="submit">Submit Reservation</button>
+      <input type="submit" value="Make Your Reservation" />
     </form>
   );
 }
