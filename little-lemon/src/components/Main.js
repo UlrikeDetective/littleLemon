@@ -1,13 +1,9 @@
 import './Main.css';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
-
-function BookingPage() {
-  return <h1>Booking Page</h1>;
-}
+import BookingPage from './BookingPage';
 
 function Main() {
-
   return (
     <main>
       <Routes>
