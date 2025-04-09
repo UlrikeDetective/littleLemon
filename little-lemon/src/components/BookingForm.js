@@ -1,3 +1,4 @@
+/* global fetchAPI, submitAPI */
 import React, { useState } from 'react';
 import './BookingForm.css';
 
@@ -13,7 +14,6 @@ function BookingForm({ availableTimes, dispatch }) {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    // Dispatch an action to update available times when the date changes
     if (name === 'date') {
       dispatch({ type: 'UPDATE_TIMES', payload: value });
     }
@@ -21,8 +21,12 @@ function BookingForm({ availableTimes, dispatch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Reservation submitted:', formData);
-     alert('Reservation submitted successfully!');
+    const success = submitAPI(formData);
+    if (success) {
+      alert('Reservation submitted successfully!');
+    } else {
+      alert('Failed to submit reservation. Please try again.');
+    }
   };
 
   return (
@@ -46,7 +50,7 @@ function BookingForm({ availableTimes, dispatch }) {
         required
       >
         <option value="">Select a time</option>
-        {availableTimes.map((time, index) => (
+        {(availableTimes || []).map((time, index) => (
           <option key={index} value={time}>
             {time}
           </option>
