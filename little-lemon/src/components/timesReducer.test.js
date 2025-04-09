@@ -22,3 +22,5 @@ describe("updateTimes", () => {
     expect(updatedState).toEqual(initialState);
   });
 });
+
+// run: npm test
