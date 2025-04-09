@@ -6,15 +6,15 @@ import BookingPage from './BookingPage';
 
 // Function to initialize the available times
 function initializeTimes() {
-  const today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
-  return fetchAPI(today); // Use fetchAPI to get available times for today
+  return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
 }
 
 // Reducer function to update available times based on the selected date
 function updateTimes(state, action) {
   switch (action.type) {
     case 'UPDATE_TIMES':
-      return fetchAPI(action.payload); // Fetch available times for the selected date
+// For now, return the same times regardless of the date
+       return initializeTimes();
     default:
       return state;
   }
