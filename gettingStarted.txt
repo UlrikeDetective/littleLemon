@@ -4,3 +4,5 @@ source lemon_env/bin/activate
 pip install ...
 
 python ....py
+
+npm start
