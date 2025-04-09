@@ -21,12 +21,8 @@ function BookingForm({ availableTimes, dispatch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const success = submitAPI(formData); // Use submitAPI to submit the form data
-    if (success) {
-      alert('Reservation submitted successfully!');
-    } else {
-      alert('Failed to submit reservation. Please try again.');
-    }
+    console.log('Reservation submitted:', formData);
+     alert('Reservation submitted successfully!');
   };
 
   return (
