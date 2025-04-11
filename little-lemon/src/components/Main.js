@@ -7,6 +7,7 @@ import { Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import BookingPage from './BookingPage';
 import ConfirmedBooking from './ConfirmedBooking';
+import Menu from '../Menu/Menu';  // Add this import
 
 // Function to initialize the available times
 export function initializeTimes() {
@@ -41,6 +42,7 @@ function Main() {
     <main>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/menu" element={<Menu />} />
         <Route
           path="/booking"
           element={
