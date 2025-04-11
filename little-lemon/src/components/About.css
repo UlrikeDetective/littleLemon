@@ -1,0 +1,108 @@
+.about-page {
+  background-color: #fdfbf6;
+  padding: 2rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-header h1 {
+  color: #495E57;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.decorative-line {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.italian-colors,
+.mexican-colors {
+  height: 4px;
+  width: 100px;
+}
+
+.italian-colors {
+  background: linear-gradient(to right, #008C45, #F4F5F0, #CD212A);
+}
+
+.mexican-colors {
+  background: linear-gradient(to right, #006847, #FFFFFF, #CE1126);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.decor-left,
+.decor-right {
+  background-repeat: repeat-y;
+  width: 60px;
+}
+
+.decor-left {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23495E57" opacity="0.1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>');
+}
+
+.decor-right {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23F4CE14" opacity="0.1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>');
+}
+
+.story-content {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.story-section {
+  margin: 2rem 0;
+  padding: 2rem;
+  border-left: 4px solid #F4CE14;
+  background-color: rgba(244, 206, 20, 0.05);
+}
+
+.story-section h2 {
+  color: #495E57;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.intro,
+.outro {
+  font-style: italic;
+  color: #666;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .decor-left,
+  .decor-right {
+    display: none;
+  }
+
+  .story-content {
+    padding: 1.5rem;
+  }
+}
