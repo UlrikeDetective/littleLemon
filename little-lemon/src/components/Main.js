@@ -9,13 +9,13 @@ import BookingPage from './BookingPage';
 import ConfirmedBooking from './ConfirmedBooking';
 
 // Function to initialize the available times
-function initializeTimes() {
+export function initializeTimes() {
   const today = new Date().toISOString().split('T')[0];
   return fetchAPI(today) || [];
 }
 
 // Reducer function to update available times based on the selected date
-function updateTimes(state, action) {
+export function updateTimes(state, action) {
   switch (action.type) {
     case 'UPDATE_TIMES':
       return fetchAPI(action.payload) || [];
