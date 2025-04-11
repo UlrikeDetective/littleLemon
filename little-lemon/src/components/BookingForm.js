@@ -27,6 +27,9 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     }
   };
 
+  // Get today's date in YYYY-MM-DD format for min date validation
+  const today = new Date().toISOString().split('T')[0];
+
   return (
     <form className="booking-form" onSubmit={handleSubmit}>
       <label htmlFor="res-date">Choose date</label>
@@ -36,7 +39,10 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         name="date"
         value={formData.date}
         onChange={handleChange}
+        min={today}
         required
+        aria-required="true"
+        aria-label="Reservation date"
       />
 
       <label htmlFor="res-time">Choose time</label>
@@ -46,6 +52,8 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         value={formData.time}
         onChange={handleChange}
         required
+        aria-required="true"
+        aria-label="Reservation time"
       >
         <option value="">Select a time</option>
         {(availableTimes || []).map((time, index) => (
@@ -65,6 +73,9 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         min="1"
         max="10"
         required
+        aria-required="true"
+        aria-label="Number of guests"
+        title="Please enter a number between 1 and 10"
       />
 
       <label htmlFor="occasion">Occasion</label>
@@ -74,6 +85,8 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         value={formData.occasion}
         onChange={handleChange}
         required
+        aria-required="true"
+        aria-label="Occasion"
       >
         <option value="">Select an occasion</option>
         <option value="Birthday">Birthday</option>
@@ -97,7 +110,11 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         <option value="Other">Other</option>
       </select>
 
-      <input type="submit" value="Make Your Reservation" />
+      <input 
+        type="submit" 
+        value="Make Your Reservation"
+        aria-label="Submit reservation"
+      />
     </form>
   );
 }
