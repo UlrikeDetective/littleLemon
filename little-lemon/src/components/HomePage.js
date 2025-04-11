@@ -6,9 +6,13 @@ function HomePage() {
       <section className="mario-adrian">
         <img src="/Mario and Adrian b.jpg" alt="Mario and Adrian" />
         <p>
-          Meet Mario and Adrian, our passionate chefs whose love for food
-          is the heart of Little Lemon. Their dedication and culinary expertise
-          bring authentic flavors to every dish.
+        Behind the vibrant flavors of the Little Lemon restaurant, 
+        stand Mario and Adrian. Mario brings the comforting heart of Italian cuisine, 
+        while Adrian infuses the bold spirit of Mexican traditions. Their shared 
+        passion for vegetarian and vegan food sparked an exciting fusion, where 
+        surprising harmonies emerge. And their secret ingredient? The radiant lemon, 
+        a unifying zest that brightens every dish, offering a unique twist where 
+        Italy meets Mexico at Little Lemon.
         </p>
       </section>
 

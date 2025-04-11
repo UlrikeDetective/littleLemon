@@ -3,11 +3,7 @@
 import './Main.css';
 import { useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
-import HomePage from './HomePage';
 import BookingPage from './BookingPage';
-import ConfirmedBooking from './ConfirmedBooking';
-import Menu from '../Menu/Menu';  // Add this import
 
 // Function to initialize the available times
 export function initializeTimes() {
@@ -40,21 +36,11 @@ function Main() {
 
   return (
     <main>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route
-          path="/booking"
-          element={
-            <BookingPage
-              availableTimes={availableTimes}
-              dispatch={dispatch}
-              submitForm={submitForm}
-            />
-          }
-        />
-        <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
-      </Routes>
+      <BookingPage
+        availableTimes={availableTimes}
+        dispatch={dispatch}
+        submitForm={submitForm}
+      />
     </main>
   );
 }

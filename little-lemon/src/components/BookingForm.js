@@ -217,23 +217,23 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             <option value="">Select an occasion</option>
             <option value="Birthday">Birthday</option>
             <option value="Anniversary">Anniversary</option>
-<option value="Casual Meal">Casual Meal/Get-Together</option>
-        <option value="Date Night">Date Night</option>
-        <option value="Family Dinner">Family Dinner</option>
-        <option value="Meeting">Meeting/Business Lunch/Dinner</option>
-        <option value="Celebration">Celebrating a Graduation/Promotion/New Job</option>
-        <option value="Thank You">Thank You/Appreciation</option>
-        <option value="Treat Yourself">Treating Yourself</option>
-        <option value="Trying New Cuisine">Trying a New Cuisine</option>
-        <option value="Support Local">Supporting a Local Business</option>
-        <option value="Just Because">Just Because!</option>
-        <option value="Engagement">Engagement Celebration</option>
-        <option value="Reunion">Reunion (Family/Friends/School)</option>
-        <option value="Pre-Event Dinner">Pre-Theater/Concert Dinner</option>
-        <option value="Post-Event Meal">Post-Theater/Concert Meal</option>
-        <option value="Project Success">Successful Project Completion</option>
-        <option value="Something new">Something new</option>
-        <option value="Other">Other</option>
+            <option value="Casual Meal">Casual Meal/Get-Together</option>
+            <option value="Date Night">Date Night</option>
+            <option value="Family Dinner">Family Dinner</option>
+            <option value="Meeting">Meeting/Business Lunch/Dinner</option>
+            <option value="Celebration">Celebrating a Graduation/Promotion/New Job</option>
+            <option value="Thank You">Thank You/Appreciation</option>
+            <option value="Treat Yourself">Treating Yourself</option>
+            <option value="Trying New Cuisine">Trying a New Cuisine</option>
+            <option value="Support Local">Supporting a Local Business</option>
+            <option value="Just Because">Just Because!</option>
+            <option value="Engagement">Engagement Celebration</option>
+            <option value="Reunion">Reunion (Family/Friends/School)</option>
+            <option value="Pre-Event Dinner">Pre-Theater/Concert Dinner</option>
+            <option value="Post-Event Meal">Post-Theater/Concert Meal</option>
+            <option value="Project Success">Successful Project Completion</option>
+            <option value="Something new">Something new</option>
+            <option value="Other">Other</option>
           </select>
           <span id="occasion-instructions" className="sr-only">
             Select an occasion for your reservation
