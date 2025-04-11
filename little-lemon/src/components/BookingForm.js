@@ -95,47 +95,45 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   const today = new Date().toISOString().split('T')[0];
 
   return (
-    <section className="booking-section" aria-label="Reservation Form">
-      <h2>Book a Table</h2>
+    <section 
+      className="booking-section" 
+      aria-labelledby="booking-title"
+    >
+      <h1 id="booking-title">Reserve a Table</h1>
+      
       <form 
-        className="booking-form" 
-        onSubmit={handleSubmit} 
-        noValidate
+        className="booking-form"
+        onSubmit={handleSubmit}
         aria-describedby="form-description"
+        noValidate
       >
-        <p id="form-description" className="sr-only">
-          All fields are required. Available booking times will update based on your selected date.
-        </p>
+        <div id="form-description" className="sr-only">
+          Fill out the form below to reserve your table at Little Lemon. All fields are required.
+        </div>
 
         <div className="form-field">
-          <label htmlFor="res-date">
-            Reservation Date
-            <span aria-hidden="true">*</span>
-          </label>
+          <label htmlFor="res-date" id="date-label">Reservation Date</label>
           <input
             type="date"
             id="res-date"
             name="date"
             value={formData.date}
             onChange={handleChange}
-            min={today}
             required
             aria-required="true"
+            aria-labelledby="date-label"
             aria-invalid={!!errors.date}
             aria-describedby={errors.date ? "date-error" : undefined}
           />
           {errors.date && (
-            <span id="date-error" className="error-message" role="alert">
+            <div id="date-error" className="error-message" role="alert">
               {errors.date}
-            </span>
+            </div>
           )}
         </div>
 
         <div className="form-field">
-          <label htmlFor="res-time">
-            Reservation Time
-            <span aria-hidden="true">*</span>
-          </label>
+          <label htmlFor="res-time" id="time-label">Reservation Time</label>
           <select
             id="res-time"
             name="time"
@@ -143,26 +141,24 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             onChange={handleChange}
             required
             aria-required="true"
+            aria-labelledby="time-label"
             aria-invalid={!!errors.time}
             aria-describedby={errors.time ? "time-error" : undefined}
           >
             <option value="">Select a time</option>
-            {(availableTimes || []).map((time, index) => (
-              <option key={index} value={time}>{time}</option>
+            {availableTimes.map((time) => (
+              <option key={time} value={time}>{time}</option>
             ))}
           </select>
           {errors.time && (
-            <span id="time-error" className="error-message" role="alert">
+            <div id="time-error" className="error-message" role="alert">
               {errors.time}
-            </span>
+            </div>
           )}
         </div>
 
         <div className="form-field">
-          <label htmlFor="guests">
-            Number of Guests
-            <span aria-hidden="true">*</span>
-          </label>
+          <label htmlFor="guests" id="guests-label">Number of Guests</label>
           <input
             type="number"
             id="guests"
@@ -173,24 +169,22 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             max="10"
             required
             aria-required="true"
+            aria-labelledby="guests-label"
             aria-invalid={!!errors.guests}
-            aria-describedby={errors.guests ? "guests-error" : "guests-hint"}
+            aria-describedby="guests-hint guests-error"
           />
           <span id="guests-hint" className="hint-text">
-            Please enter a number between 1 and 10
+            Enter a number between 1 and 10
           </span>
           {errors.guests && (
-            <span id="guests-error" className="error-message" role="alert">
+            <div id="guests-error" className="error-message" role="alert">
               {errors.guests}
-            </span>
+            </div>
           )}
         </div>
 
         <div className="form-field">
-          <label htmlFor="occasion">
-            Occasion
-            <span aria-hidden="true">*</span>
-          </label>
+          <label htmlFor="occasion" id="occasion-label">Occasion</label>
           <select
             id="occasion"
             name="occasion"
@@ -198,6 +192,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             onChange={handleChange}
             required
             aria-required="true"
+            aria-labelledby="occasion-label"
             aria-invalid={!!errors.occasion}
             aria-describedby={errors.occasion ? "occasion-error" : undefined}
           >
@@ -206,9 +201,9 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             <option value="Anniversary">Anniversary</option>
           </select>
           {errors.occasion && (
-            <span id="occasion-error" className="error-message" role="alert">
+            <div id="occasion-error" className="error-message" role="alert">
               {errors.occasion}
-            </span>
+            </div>
           )}
         </div>
 
@@ -217,9 +212,18 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
           className="submit-button"
           disabled={!isFormValid}
           aria-disabled={!isFormValid}
+          aria-label="Submit reservation request"
         >
           Make Your Reservation
         </button>
+
+        <div 
+          className="form-status" 
+          role="status" 
+          aria-live="polite"
+        >
+          {isFormValid ? "Form is ready to submit" : "Please fill in all required fields"}
+        </div>
       </form>
     </section>
   );

@@ -99,3 +99,42 @@
   border-color: #dc2626;
   border-width: 2px;
 }
+
+/* ARIA-related styles */
+[aria-required="true"] + label::after {
+  content: "*";
+  color: #dc2626;
+  margin-left: 0.25rem;
+}
+
+[aria-invalid="true"] {
+  border-color: #dc2626;
+  border-width: 2px;
+  background-color: #fee2e2;
+}
+
+[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Focus indicators for accessibility */
+input:focus,
+select:focus,
+button:focus {
+  outline: 2px solid #4682b4;
+  outline-offset: 2px;
+}
+
+/* Status messages */
+[role="alert"] {
+  background-color: #fee2e2;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.25rem;
+}
+
+[aria-live="polite"] {
+  margin-top: 0.5rem;
+  font-style: italic;
+}
