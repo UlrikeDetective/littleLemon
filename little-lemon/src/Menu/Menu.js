@@ -125,6 +125,110 @@ function Menu() {
           </div>
         </div>
 
+        {/* Section: Main Courses - Platos Fuertes */}
+        <div className="section mains">
+          <h3 className="meal-type">Main Courses - Platos Fuertes</h3>
+          
+          {/* Vegetarian Mains */}
+          <div className="item-name">
+            <div className="label">Lemon-Ricotta Stuffed Shells with Spicy Tomato Cream Sauce 🌱</div>
+            <b>$18</b>
+            <div className="description">Large pasta shells filled with a creamy ricotta cheese blended with lemon zest and herbs, baked in a rich and slightly spicy tomato cream sauce</div>
+          </div>
+
+          <div className="item-name">
+            <div className="label">Poblano Mac & Cheese with Corn & Lime Crema 🌱</div>
+            <b>$17</b>
+            <div className="description">Elbow macaroni in a creamy cheese sauce with roasted poblano peppers and sweet corn, topped with a swirl of tangy lime crema and toasted breadcrumbs</div>
+          </div>
+
+          <div className="item-name">
+            <div className="label">Eggplant Parmigiana Enchiladas 🌱</div>
+            <b>$19</b>
+            <div className="description">Layers of thinly sliced breaded eggplant, rich tomato sauce, and melted mozzarella cheese rolled in corn tortillas, baked until bubbly and served with a side of Mexican rice</div>
+          </div>
+
+          <div className="item-name">
+            <div className="label">Spinach & Artichoke Ravioli with Lemon-Butter Sage Sauce 🌱</div>
+            <b>$20</b>
+            <div className="description">Homemade ravioli filled with a savory mixture of spinach and artichoke hearts, tossed in a delicate lemon-butter sauce with fresh sage leaves and grated Parmesan cheese</div>
+          </div>
+
+          <div className="item-name">
+            <div className="label">Mushroom & Goat Cheese Quesadillas with Orange-Fig Salsa 🌱</div>
+            <b>$18</b>
+            <div className="description">Large flour tortillas filled with sautéed mushrooms, caramelized onions, and creamy goat cheese, served with a sweet and tangy orange-fig salsa</div>
+          </div>
+
+          {/* Vegan Mains */}
+          <div className="item-name">
+            <div className="label">Spicy Lemon & Black Bean Burgers with Avocado-Lime Aioli 🌿</div>
+            <b>$17</b>
+            <div className="description">Flavorful black bean and vegetable burgers infused with lemon zest and spices, served on toasted buns with a creamy avocado-lime aioli, lettuce, and tomato</div>
+          </div>
+
+          <div className="item-name">
+            <div className="label">Vegan Polenta Lasagna with Roasted Vegetables & Chipotle Marinara 🌿</div>
+            <b>$19</b>
+            <div className="description">Layers of creamy polenta, roasted seasonal vegetables (zucchini, bell peppers, eggplant), and a smoky chipotle-infused marinara sauce, baked until golden brown</div>
+          </div>
+
+          <div className="item-name">
+            <div className="label">Sweet Potato & Kale Tacos with Citrus Slaw 🌿</div>
+            <b>$16</b>
+            <div className="description">Roasted sweet potato and sautéed kale served in warm corn tortillas with a refreshing and tangy citrus slaw (cabbage, carrots, lime juice, cilantro)</div>
+          </div>
+
+          <div className="item-name">
+            <div className="label">Lentil Bolognese with Lemon-Herb Gnocchi 🌿</div>
+            <b>$20</b>
+            <div className="description">Hearty lentil and vegetable bolognese sauce served over soft, homemade vegan gnocchi infused with lemon zest and fresh herbs</div>
+          </div>
+        </div>
+
+        {/* Section: Desserts - Postres */}
+        <div className="section desserts">
+          <h3 className="meal-type">Desserts - Postres</h3>
+          
+          {/* Vegetarian Desserts */}
+          <div className="item-name">
+            <div className="label">Lemon-Lavender Panna Cotta with Honey Drizzle 🌱</div>
+            <b>$10</b>
+            <div className="description">Silky smooth panna cotta infused with the delicate flavors of lemon and lavender, drizzled with local honey and garnished with edible flowers</div>
+          </div>
+
+          <div className="item-name">
+            <div className="label">Ricotta & Citrus Cannoli with Pistachio Dust 🌱</div>
+            <b>$11</b>
+            <div className="description">Crispy fried cannoli shells filled with a sweet ricotta cheese blended with candied citrus peel and a hint of vanilla, dusted with chopped pistachios</div>
+          </div>
+
+          <div className="item-name">
+            <div className="label">Mexican Chocolate Budino with Orange Zest & Whipped Cream 🌱</div>
+            <b>$12</b>
+            <div className="description">Rich and decadent dark chocolate custard infused with a touch of cinnamon and a hint of chili, topped with fresh orange zest and a dollop of whipped cream</div>
+          </div>
+
+          {/* Vegan Desserts */}
+          <div className="item-name">
+            <div className="label">Lime & Coconut Chia Seed Pudding with Toasted Almonds 🌿</div>
+            <b>$9</b>
+            <div className="description">Creamy chia seed pudding made with coconut milk and infused with fresh lime juice and zest, topped with toasted slivered almonds</div>
+          </div>
+
+          <div className="item-name">
+            <div className="label">Vegan Chocolate Avocado Mousse with Raspberry Coulis 🌿</div>
+            <b>$11</b>
+            <div className="description">Rich and decadent chocolate mousse made with ripe avocados and cocoa powder, served with a tart raspberry coulis</div>
+          </div>
+
+          <div className="item-name">
+            <div className="label">Orange & Anise Biscotti with Sweet Wine Dip 🌿</div>
+            <b>$10</b>
+            <div className="description">Crispy twice-baked biscotti infused with orange zest and a hint of anise, served with a small glass of sweet dessert wine (vegan-friendly option available)</div>
+          </div>
+        </div>
+
         {/* Legend */}
         <div className="legend">
           <p>🌱 - Vegetarian | 🌿 - Vegan</p>
