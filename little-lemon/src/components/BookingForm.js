@@ -108,11 +108,14 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         noValidate
       >
         <div id="form-description" className="sr-only">
-          Fill out the form below to reserve your table at Little Lemon. All fields are required.
+          Fill out the form below to reserve your table at Little Lemon. All fields marked with an asterisk (*) are required.
         </div>
 
         <div className="form-field">
-          <label htmlFor="res-date" id="date-label">Reservation Date</label>
+          <label htmlFor="res-date" id="date-label">
+            Reservation Date
+            <span aria-label="required" className="required">*</span>
+          </label>
           <input
             type="date"
             id="res-date"
@@ -123,8 +126,11 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             aria-required="true"
             aria-labelledby="date-label"
             aria-invalid={!!errors.date}
-            aria-describedby={errors.date ? "date-error" : undefined}
+            aria-describedby={`date-instructions ${errors.date ? "date-error" : ""}`}
           />
+          <span id="date-instructions" className="sr-only">
+            Select a date for your reservation
+          </span>
           {errors.date && (
             <div id="date-error" className="error-message" role="alert">
               {errors.date}
@@ -133,7 +139,10 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         </div>
 
         <div className="form-field">
-          <label htmlFor="res-time" id="time-label">Reservation Time</label>
+          <label htmlFor="res-time" id="time-label">
+            Reservation Time
+            <span aria-label="required" className="required">*</span>
+          </label>
           <select
             id="res-time"
             name="time"
@@ -143,13 +152,16 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             aria-required="true"
             aria-labelledby="time-label"
             aria-invalid={!!errors.time}
-            aria-describedby={errors.time ? "time-error" : undefined}
+            aria-describedby={`time-instructions ${errors.time ? "time-error" : ""}`}
           >
             <option value="">Select a time</option>
             {availableTimes.map((time) => (
               <option key={time} value={time}>{time}</option>
             ))}
           </select>
+          <span id="time-instructions" className="sr-only">
+            Select a time for your reservation
+          </span>
           {errors.time && (
             <div id="time-error" className="error-message" role="alert">
               {errors.time}
@@ -158,7 +170,10 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         </div>
 
         <div className="form-field">
-          <label htmlFor="guests" id="guests-label">Number of Guests</label>
+          <label htmlFor="guests" id="guests-label">
+            Number of Guests
+            <span aria-label="required" className="required">*</span>
+          </label>
           <input
             type="number"
             id="guests"
@@ -184,7 +199,10 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         </div>
 
         <div className="form-field">
-          <label htmlFor="occasion" id="occasion-label">Occasion</label>
+          <label htmlFor="occasion" id="occasion-label">
+            Occasion
+            <span aria-label="required" className="required">*</span>
+          </label>
           <select
             id="occasion"
             name="occasion"
@@ -194,12 +212,32 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             aria-required="true"
             aria-labelledby="occasion-label"
             aria-invalid={!!errors.occasion}
-            aria-describedby={errors.occasion ? "occasion-error" : undefined}
+            aria-describedby={`occasion-instructions ${errors.occasion ? "occasion-error" : ""}`}
           >
             <option value="">Select an occasion</option>
             <option value="Birthday">Birthday</option>
             <option value="Anniversary">Anniversary</option>
+<option value="Casual Meal">Casual Meal/Get-Together</option>
+        <option value="Date Night">Date Night</option>
+        <option value="Family Dinner">Family Dinner</option>
+        <option value="Meeting">Meeting/Business Lunch/Dinner</option>
+        <option value="Celebration">Celebrating a Graduation/Promotion/New Job</option>
+        <option value="Thank You">Thank You/Appreciation</option>
+        <option value="Treat Yourself">Treating Yourself</option>
+        <option value="Trying New Cuisine">Trying a New Cuisine</option>
+        <option value="Support Local">Supporting a Local Business</option>
+        <option value="Just Because">Just Because!</option>
+        <option value="Engagement">Engagement Celebration</option>
+        <option value="Reunion">Reunion (Family/Friends/School)</option>
+        <option value="Pre-Event Dinner">Pre-Theater/Concert Dinner</option>
+        <option value="Post-Event Meal">Post-Theater/Concert Meal</option>
+        <option value="Project Success">Successful Project Completion</option>
+        <option value="Something new">Something new</option>
+        <option value="Other">Other</option>
           </select>
+          <span id="occasion-instructions" className="sr-only">
+            Select an occasion for your reservation
+          </span>
           {errors.occasion && (
             <div id="occasion-error" className="error-message" role="alert">
               {errors.occasion}

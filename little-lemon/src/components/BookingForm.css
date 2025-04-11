@@ -16,15 +16,23 @@
   background-color: #8eadf4;
 }
 
+/* Label styles */
+.booking-form label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.required {
+  color: #dc2626;
+  margin-left: 0.25rem;
+}
+
 .form-field {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.booking-form label {
-  font-family: 'Noto Sans Mono', monospace;
-  font-weight: bold;
+  margin-bottom: 1.5rem;
 }
 
 .booking-form input,
@@ -43,6 +51,7 @@
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
   border: 0;
 }
 
@@ -98,19 +107,13 @@
 [aria-invalid="true"] {
   border-color: #dc2626;
   border-width: 2px;
+  background-color: #fee2e2;
 }
 
-/* ARIA-related styles */
 [aria-required="true"] + label::after {
   content: "*";
   color: #dc2626;
   margin-left: 0.25rem;
-}
-
-[aria-invalid="true"] {
-  border-color: #dc2626;
-  border-width: 2px;
-  background-color: #fee2e2;
 }
 
 [aria-disabled="true"] {
@@ -122,6 +125,13 @@
 input:focus,
 select:focus,
 button:focus {
+  outline: 2px solid #4682b4;
+  outline-offset: 2px;
+}
+
+/* Input and label relationship indicators */
+input:focus + label,
+select:focus + label {
   outline: 2px solid #4682b4;
   outline-offset: 2px;
 }
