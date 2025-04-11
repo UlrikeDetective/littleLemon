@@ -1,5 +1,5 @@
 /* global fetchAPI, submitAPI */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './BookingForm.css';
 
 function BookingForm({ availableTimes, dispatch, submitForm }) {
@@ -9,6 +9,65 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
     guests: 1,
     occasion: '',
   });
+
+  const [errors, setErrors] = useState({
+    date: '',
+    time: '',
+    guests: '',
+    occasion: '',
+  });
+
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  // Validation functions
+  const validateDate = (date) => {
+    const today = new Date().toISOString().split('T')[0];
+    if (!date) return 'Date is required';
+    if (date < today) return 'Date cannot be in the past';
+    return '';
+  };
+
+  const validateTime = (time) => {
+    if (!time) return 'Time is required';
+    return '';
+  };
+
+  const validateGuests = (guests) => {
+    const guestsNum = Number(guests);
+    if (!guests) return 'Number of guests is required';
+    if (guestsNum < 1) return 'Minimum 1 guest required';
+    if (guestsNum > 10) return 'Maximum 10 guests allowed';
+    if (!Number.isInteger(guestsNum)) return 'Please enter a whole number';
+    return '';
+  };
+
+  const validateOccasion = (occasion) => {
+    if (!occasion) return 'Please select an occasion';
+    return '';
+  };
+
+  // Validate all fields and update form validity
+  const validateForm = (data) => {
+    const newErrors = {
+      date: validateDate(data.date),
+      time: validateTime(data.time),
+      guests: validateGuests(data.guests),
+      occasion: validateOccasion(data.occasion),
+    };
+
+    setErrors(newErrors);
+
+    // Check if all validation passed (no error messages)
+    const isValid = Object.values(newErrors).every(error => error === '');
+    setIsFormValid(isValid);
+
+    return isValid;
+  };
+
+  // Validate form when any field changes
+  useEffect(() => {
+    validateForm(formData);
+  }, [formData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,17 +80,22 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Validate form before submission
+    if (!validateForm(formData)) {
+      return;
+    }
+
     const success = submitForm(formData);
     if (!success) {
       alert('Failed to submit reservation. Please try again.');
     }
   };
 
-  // Get today's date in YYYY-MM-DD format for min date validation
   const today = new Date().toISOString().split('T')[0];
 
   return (
-    <form className="booking-form" onSubmit={handleSubmit}>
+    <form className="booking-form" onSubmit={handleSubmit} noValidate>
       <label htmlFor="res-date">Choose date</label>
       <input
         type="date"
@@ -43,7 +107,9 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         required
         aria-required="true"
         aria-label="Reservation date"
+        aria-invalid={!!errors.date}
       />
+      {errors.date && <span className="error-message">{errors.date}</span>}
 
       <label htmlFor="res-time">Choose time</label>
       <select
@@ -54,14 +120,14 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         required
         aria-required="true"
         aria-label="Reservation time"
+        aria-invalid={!!errors.time}
       >
         <option value="">Select a time</option>
         {(availableTimes || []).map((time, index) => (
-          <option key={index} value={time}>
-            {time}
-          </option>
+          <option key={index} value={time}>{time}</option>
         ))}
       </select>
+      {errors.time && <span className="error-message">{errors.time}</span>}
 
       <label htmlFor="guests">Number of guests</label>
       <input
@@ -75,8 +141,10 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         required
         aria-required="true"
         aria-label="Number of guests"
+        aria-invalid={!!errors.guests}
         title="Please enter a number between 1 and 10"
       />
+      {errors.guests && <span className="error-message">{errors.guests}</span>}
 
       <label htmlFor="occasion">Occasion</label>
       <select
@@ -87,6 +155,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         required
         aria-required="true"
         aria-label="Occasion"
+        aria-invalid={!!errors.occasion}
       >
         <option value="">Select an occasion</option>
         <option value="Birthday">Birthday</option>
@@ -109,11 +178,13 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         <option value="Something new">Something new</option>
         <option value="Other">Other</option>
       </select>
+      {errors.occasion && <span className="error-message">{errors.occasion}</span>}
 
       <input 
         type="submit" 
         value="Make Your Reservation"
         aria-label="Submit reservation"
+        disabled={!isFormValid}
       />
     </form>
   );
