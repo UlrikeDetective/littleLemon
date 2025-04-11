@@ -38,18 +38,35 @@
 }
 
 .dishes {
+  padding: 2rem;
+  text-align: center;
+}
+
+.dish-container {
   display: flex;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .dish {
-  width: auto;
+  flex: 1;
+  max-width: 300px;
   text-align: center;
 }
 
 .dish img {
-  height: 200px;
   width: auto;
+  height: 300px;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dishes-description {
+  max-width: auto;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #333;
+  font-size: 1.0rem;
+  padding: 1rem;
 }
