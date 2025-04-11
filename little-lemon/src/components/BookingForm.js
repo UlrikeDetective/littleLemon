@@ -21,7 +21,10 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitForm(formData);
+    const success = submitForm(formData);
+    if (!success) {
+      alert('Failed to submit reservation. Please try again.');
+    }
   };
 
   return (
