@@ -42,8 +42,8 @@
 
 .description {
   font-style: italic;
-  border-top: 2px solid #02de95;
-  padding-top: 0.5rem;
+  color: #666;
+  line-height: 1.4;
   margin-top: 0.5rem;
 }
 
@@ -71,4 +71,52 @@ div > h3 {
 
 div ~ div {
   color: rgb(8, 5, 5);
+}
+
+/* Section title styling */
+.meal-type {
+  font-size: 1.8rem;
+  color: #495E57;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'Noto Sans Mono', monospace;
+  border-bottom: 2px solid #F4CE14;
+  padding-bottom: 0.5rem;
+}
+
+/* Fusion cuisine specific styles */
+.menu {
+  font-size: 1.5rem;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 1rem 0 2rem;
+}
+
+/* Price styling */
+.item-name b {
+  color: #495E57;
+  font-size: 1.1rem;
+}
+
+/* Section specific backgrounds */
+.section.salads {
+  background-color: #e8f5e9;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+}
+
+.section.soups {
+  background-color: #f1f8e9;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+}
+
+/* Enhanced section titles */
+.section.salads h3,
+.section.soups h3 {
+  border-bottom: 2px solid #81c784;
+  margin-bottom: 2rem;
 }
