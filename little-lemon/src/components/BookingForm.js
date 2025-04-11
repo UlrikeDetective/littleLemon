@@ -95,98 +95,133 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
   const today = new Date().toISOString().split('T')[0];
 
   return (
-    <form className="booking-form" onSubmit={handleSubmit} noValidate>
-      <label htmlFor="res-date">Choose date</label>
-      <input
-        type="date"
-        id="res-date"
-        name="date"
-        value={formData.date}
-        onChange={handleChange}
-        min={today}
-        required
-        aria-required="true"
-        aria-label="Reservation date"
-        aria-invalid={!!errors.date}
-      />
-      {errors.date && <span className="error-message">{errors.date}</span>}
-
-      <label htmlFor="res-time">Choose time</label>
-      <select
-        id="res-time"
-        name="time"
-        value={formData.time}
-        onChange={handleChange}
-        required
-        aria-required="true"
-        aria-label="Reservation time"
-        aria-invalid={!!errors.time}
+    <section className="booking-section" aria-label="Reservation Form">
+      <h2>Book a Table</h2>
+      <form 
+        className="booking-form" 
+        onSubmit={handleSubmit} 
+        noValidate
+        aria-describedby="form-description"
       >
-        <option value="">Select a time</option>
-        {(availableTimes || []).map((time, index) => (
-          <option key={index} value={time}>{time}</option>
-        ))}
-      </select>
-      {errors.time && <span className="error-message">{errors.time}</span>}
+        <p id="form-description" className="sr-only">
+          All fields are required. Available booking times will update based on your selected date.
+        </p>
 
-      <label htmlFor="guests">Number of guests</label>
-      <input
-        type="number"
-        id="guests"
-        name="guests"
-        value={formData.guests}
-        onChange={handleChange}
-        min="1"
-        max="10"
-        required
-        aria-required="true"
-        aria-label="Number of guests"
-        aria-invalid={!!errors.guests}
-        title="Please enter a number between 1 and 10"
-      />
-      {errors.guests && <span className="error-message">{errors.guests}</span>}
+        <div className="form-field">
+          <label htmlFor="res-date">
+            Reservation Date
+            <span aria-hidden="true">*</span>
+          </label>
+          <input
+            type="date"
+            id="res-date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+            min={today}
+            required
+            aria-required="true"
+            aria-invalid={!!errors.date}
+            aria-describedby={errors.date ? "date-error" : undefined}
+          />
+          {errors.date && (
+            <span id="date-error" className="error-message" role="alert">
+              {errors.date}
+            </span>
+          )}
+        </div>
 
-      <label htmlFor="occasion">Occasion</label>
-      <select
-        id="occasion"
-        name="occasion"
-        value={formData.occasion}
-        onChange={handleChange}
-        required
-        aria-required="true"
-        aria-label="Occasion"
-        aria-invalid={!!errors.occasion}
-      >
-        <option value="">Select an occasion</option>
-        <option value="Birthday">Birthday</option>
-        <option value="Anniversary">Anniversary</option>
-        <option value="Casual Meal">Casual Meal/Get-Together</option>
-        <option value="Date Night">Date Night</option>
-        <option value="Family Dinner">Family Dinner</option>
-        <option value="Meeting">Meeting/Business Lunch/Dinner</option>
-        <option value="Celebration">Celebrating a Graduation/Promotion/New Job</option>
-        <option value="Thank You">Thank You/Appreciation</option>
-        <option value="Treat Yourself">Treating Yourself</option>
-        <option value="Trying New Cuisine">Trying a New Cuisine</option>
-        <option value="Support Local">Supporting a Local Business</option>
-        <option value="Just Because">Just Because!</option>
-        <option value="Engagement">Engagement Celebration</option>
-        <option value="Reunion">Reunion (Family/Friends/School)</option>
-        <option value="Pre-Event Dinner">Pre-Theater/Concert Dinner</option>
-        <option value="Post-Event Meal">Post-Theater/Concert Meal</option>
-        <option value="Project Success">Successful Project Completion</option>
-        <option value="Something new">Something new</option>
-        <option value="Other">Other</option>
-      </select>
-      {errors.occasion && <span className="error-message">{errors.occasion}</span>}
+        <div className="form-field">
+          <label htmlFor="res-time">
+            Reservation Time
+            <span aria-hidden="true">*</span>
+          </label>
+          <select
+            id="res-time"
+            name="time"
+            value={formData.time}
+            onChange={handleChange}
+            required
+            aria-required="true"
+            aria-invalid={!!errors.time}
+            aria-describedby={errors.time ? "time-error" : undefined}
+          >
+            <option value="">Select a time</option>
+            {(availableTimes || []).map((time, index) => (
+              <option key={index} value={time}>{time}</option>
+            ))}
+          </select>
+          {errors.time && (
+            <span id="time-error" className="error-message" role="alert">
+              {errors.time}
+            </span>
+          )}
+        </div>
 
-      <input 
-        type="submit" 
-        value="Make Your Reservation"
-        aria-label="Submit reservation"
-        disabled={!isFormValid}
-      />
-    </form>
+        <div className="form-field">
+          <label htmlFor="guests">
+            Number of Guests
+            <span aria-hidden="true">*</span>
+          </label>
+          <input
+            type="number"
+            id="guests"
+            name="guests"
+            value={formData.guests}
+            onChange={handleChange}
+            min="1"
+            max="10"
+            required
+            aria-required="true"
+            aria-invalid={!!errors.guests}
+            aria-describedby={errors.guests ? "guests-error" : "guests-hint"}
+          />
+          <span id="guests-hint" className="hint-text">
+            Please enter a number between 1 and 10
+          </span>
+          {errors.guests && (
+            <span id="guests-error" className="error-message" role="alert">
+              {errors.guests}
+            </span>
+          )}
+        </div>
+
+        <div className="form-field">
+          <label htmlFor="occasion">
+            Occasion
+            <span aria-hidden="true">*</span>
+          </label>
+          <select
+            id="occasion"
+            name="occasion"
+            value={formData.occasion}
+            onChange={handleChange}
+            required
+            aria-required="true"
+            aria-invalid={!!errors.occasion}
+            aria-describedby={errors.occasion ? "occasion-error" : undefined}
+          >
+            <option value="">Select an occasion</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Anniversary">Anniversary</option>
+          </select>
+          {errors.occasion && (
+            <span id="occasion-error" className="error-message" role="alert">
+              {errors.occasion}
+            </span>
+          )}
+        </div>
+
+        <button 
+          type="submit"
+          className="submit-button"
+          disabled={!isFormValid}
+          aria-disabled={!isFormValid}
+        >
+          Make Your Reservation
+        </button>
+      </form>
+    </section>
   );
 }
 
