@@ -5,6 +5,7 @@ import { useReducer } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
 import BookingPage from './BookingPage';
+import ConfirmedBooking from './ConfirmedBooking';
 
 // Function to initialize the available times
 function initializeTimes() {
@@ -38,6 +39,7 @@ function Main() {
             />
           }
         />
+        <Route path="/booking-confirmed" element={<ConfirmedBooking />} />
       </Routes>
     </main>
   );

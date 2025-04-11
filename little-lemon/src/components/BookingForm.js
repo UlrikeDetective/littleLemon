@@ -1,8 +1,10 @@
 /* global fetchAPI, submitAPI */
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './BookingForm.css';
 
 function BookingForm({ availableTimes, dispatch }) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     date: '',
     time: '',
@@ -23,7 +25,7 @@ function BookingForm({ availableTimes, dispatch }) {
     e.preventDefault();
     const success = submitAPI(formData);
     if (success) {
-      alert('Reservation submitted successfully!');
+      navigate('/booking-confirmed');
     } else {
       alert('Failed to submit reservation. Please try again.');
     }
