@@ -1,6 +1,0 @@
-python3 -m venv lemon_env
-source lemon_env/bin/activate
-
-pip install ...
-
-npm start
