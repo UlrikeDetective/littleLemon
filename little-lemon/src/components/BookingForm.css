@@ -13,7 +13,7 @@
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 8px;
-  background-color: #8eadf4;
+  background-color: #b4dfb6;
 }
 
 /* Label styles */
@@ -24,7 +24,7 @@
 }
 
 .required {
-  color: #dc2626;
+  color: #4682b4;
   margin-left: 0.25rem;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .error-message {
-  color: #dc2626;
+  color: #4682b4;
   font-size: 0.875rem;
   font-weight: 500;
   margin-top: 0.25rem;
@@ -81,7 +81,7 @@
 
 .booking-form input[aria-invalid="true"],
 .booking-form select[aria-invalid="true"] {
-  border-color: #ff0000;
+  border-color: #346085;
 }
 
 .booking-form input[type="submit"]:disabled {
@@ -100,19 +100,19 @@
 }
 
 .submit-button:disabled {
-  background-color: #cccccc;
+  background-color: #3e3d3d;
   cursor: not-allowed;
 }
 
 [aria-invalid="true"] {
-  border-color: #dc2626;
+  border-color: #4682b4;
   border-width: 2px;
   background-color: #fee2e2;
 }
 
 [aria-required="true"] + label::after {
   content: "*";
-  color: #dc2626;
+  color: #4682b4;
   margin-left: 0.25rem;
 }
 
@@ -146,5 +146,5 @@ select:focus + label {
 
 [aria-live="polite"] {
   margin-top: 0.5rem;
-  font-style: italic;
+  font-style: normal;
 }
