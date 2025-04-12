@@ -1,0 +1,166 @@
+.contact-page {
+  padding: 2rem;
+  font-family: 'Noto Sans Mono', monospace;
+  background-color: #f0f8ff;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+  font-family: 'Plaster', system-ui;
+  font-weight: 400;
+  color: #495E57;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.decorative-line {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.italian-colors,
+.mexican-colors {
+  height: 4px;
+  width: 100px;
+}
+
+.italian-colors {
+  background: linear-gradient(to right, #008C45, #F4F5F0, #CD212A);
+}
+
+.mexican-colors {
+  background: linear-gradient(to right, #006847, #FFFFFF, #CE1126);
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Lemon with Umbrella Animation */
+.lemon-umbrella {
+  position: relative;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lemon {
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+.lemon-body {
+  width: 150px;
+  height: 150px;
+  background-color: #F4CE14;
+  border-radius: 75px;
+  position: relative;
+  box-shadow: inset -15px -15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.umbrella {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.umbrella-top {
+  width: 180px;
+  height: 100px;
+  background: linear-gradient(45deg, 
+    #FF6B6B, #4ECDC4, #45B7D1, 
+    #96CEB4, #FFEEAD, #FF6F69
+  );
+  border-radius: 100px 100px 0 0;
+  position: relative;
+  transform-origin: bottom center;
+  animation: umbrella-sway 4s ease-in-out infinite;
+}
+
+.umbrella-stick {
+  width: 8px;
+  height: 100px;
+  background-color: #666;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 90px;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes umbrella-sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+/* Contact Content Styling */
+.contact-content {
+  padding: 2rem;
+}
+
+.contact-section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #F4CE14;
+}
+
+.contact-section h2 {
+  font-family: 'Plaster', system-ui;
+  font-weight: 400;
+  color: #495E57;
+  margin-bottom: 1rem;
+}
+
+.contact-section p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .lemon-umbrella {
+    height: 300px;
+  }
+
+  .contact-section {
+    padding: 1rem;
+  }
+}
