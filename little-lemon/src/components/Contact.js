@@ -31,10 +31,9 @@ function Contact() {
 
           <div className="contact-section">
             <h2>Hours</h2>
-            <p>Tuesday - Sunday</p>
-            <p>Lunch: 11:30 AM - 2:30 PM</p>
+            <p>Monday - Sunday</p>
             <p>Dinner: 5:30 PM - 10:00 PM</p>
-            <p><em>Closed on Mondays</em></p>
+            <p><em>Closed on Christmas day</em></p>
           </div>
 
           <div className="contact-section">

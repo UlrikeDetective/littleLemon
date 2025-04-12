@@ -99,7 +99,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
       className="booking-section" 
       aria-labelledby="booking-title"
     >
-      <h1 id="booking-title">Reserve a Table</h1>
+      {/* <h1 id="booking-title">Reserve a Table</h1> */}
       
       <form 
         className="booking-form"
@@ -107,9 +107,9 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
         aria-describedby="form-description"
         noValidate
       >
-        <div id="form-description" className="sr-only">
+{/*         <div id="form-description" className="sr-only">
           Fill out the form below to reserve your table at Little Lemon. All fields marked with an asterisk (*) are required.
-        </div>
+        </div> */}
 
         <div className="form-field">
           <label htmlFor="res-date" id="date-label">

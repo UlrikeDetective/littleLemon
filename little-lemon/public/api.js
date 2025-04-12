@@ -9,15 +9,11 @@ const seededRandom = function (seed) {
 
 const fetchAPI = function(date) {
     let result = [];
-    let random = seededRandom(date.replace(/-/g, ''));
 
+    // Add all time slots between 17:00 (5 PM) and 23:00 (11 PM)
     for(let i = 17; i <= 23; i++) {
-        if(random() < 0.5) {
-            result.push(i + ':00');
-        }
-        if(random() < 0.5) {
-            result.push(i + ':30');
-        }
+        result.push(i + ':00');
+        result.push(i + ':30');
     }
     return result;
 };

@@ -1,0 +1,18 @@
+.booking-page {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.booking-page h1 {
+  font-family: 'Plaster', system-ui;
+  color: #495E57;
+  margin-bottom: 1rem;
+}
+
+.booking-page p {
+  font-family: 'Noto Sans Mono', monospace;
+  color: #333;
+  margin-bottom: 2rem;
+}
