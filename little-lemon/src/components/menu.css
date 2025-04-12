@@ -41,7 +41,8 @@
 }
 
 .description {
-  font-style: italic;
+  font-family: 'Noto Sans Mono', monospace;
+  font-style: normal;
   color: #666;
   line-height: 1.4;
   margin-top: 0.5rem;
@@ -75,11 +76,12 @@ div ~ div {
 
 /* Section title styling */
 .meal-type {
+  font-family: 'Plaster', system-ui;
+  font-weight: 400;
   font-size: 1.8rem;
   color: #495E57;
   margin-bottom: 2rem;
   text-align: center;
-  font-family: 'Noto Sans Mono', monospace;
   border-bottom: 2px solid #F4CE14;
   padding-bottom: 0.5rem;
 }

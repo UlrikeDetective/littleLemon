@@ -1,6 +1,6 @@
 .drinks-page {
   padding: 2rem;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Noto Sans Mono', monospace;
 }
 
 .drinks-container {
@@ -43,6 +43,8 @@
 
 /* Heading styles */
 .drink-type {
+  font-family: 'Plaster', system-ui;
+  font-weight: 400;
   color: #495E57;
   font-size: 1.8rem;
   margin-bottom: 2rem;
@@ -70,8 +72,9 @@
 }
 
 .description {
+  font-family: 'Noto Sans Mono', monospace;
+  font-style: normal;
   color: #666;
-  font-style: italic;
   margin-top: 0.5rem;
 }
 

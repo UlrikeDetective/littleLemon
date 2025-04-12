@@ -73,6 +73,8 @@
 }
 
 .story-section h2 {
+  font-family: 'Plaster', system-ui;
+  font-weight: 400;
   color: #495E57;
   font-size: 1.8rem;
   margin-bottom: 1rem;
@@ -80,13 +82,16 @@
 
 .intro,
 .outro {
-  font-style: italic;
+  font-family: 'Noto Sans Mono', monospace;
+  font-style: normal;
   color: #666;
   line-height: 1.8;
   font-size: 1.1rem;
 }
 
 p {
+  font-family: 'Noto Sans Mono', monospace;
+  font-style: normal;
   line-height: 1.8;
   margin-bottom: 1.5rem;
   color: #333;

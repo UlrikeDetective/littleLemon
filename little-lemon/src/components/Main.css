@@ -1,3 +1,25 @@
+/* App-wide font settings */
+body {
+  font-family: 'Noto Sans Mono', monospace;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Plaster', system-ui;
+  font-weight: 400;
+}
+
+/* Remove italics from all components */
+.description,
+.intro,
+.outro,
+p {
+  font-family: 'Noto Sans Mono', monospace;
+  font-style: normal;
+}
+
 main {
   padding: 1rem;
   background-color: #ffffff;
