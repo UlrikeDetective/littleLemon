@@ -125,17 +125,8 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             required
             aria-required="true"
             aria-labelledby="date-label"
-            aria-invalid={!!errors.date}
-            aria-describedby={`date-instructions ${errors.date ? "date-error" : ""}`}
+            className={!formData.date ? "error-field" : ""}
           />
-          <span id="date-instructions" className="sr-only">
-            Select a date for your reservation
-          </span>
-          {errors.date && (
-            <div id="date-error" className="error-message" role="alert">
-              {errors.date}
-            </div>
-          )}
         </div>
 
         <div className="form-field">
@@ -151,22 +142,13 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             required
             aria-required="true"
             aria-labelledby="time-label"
-            aria-invalid={!!errors.time}
-            aria-describedby={`time-instructions ${errors.time ? "time-error" : ""}`}
+            className={!formData.time ? "error-field" : ""}
           >
             <option value="">Select a time</option>
             {availableTimes.map((time) => (
               <option key={time} value={time}>{time}</option>
             ))}
           </select>
-          <span id="time-instructions" className="sr-only">
-            Select a time for your reservation
-          </span>
-          {errors.time && (
-            <div id="time-error" className="error-message" role="alert">
-              {errors.time}
-            </div>
-          )}
         </div>
 
         <div className="form-field">
@@ -185,17 +167,8 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             required
             aria-required="true"
             aria-labelledby="guests-label"
-            aria-invalid={!!errors.guests}
-            aria-describedby="guests-hint guests-error"
+            className={!formData.guests ? "error-field" : ""}
           />
-          <span id="guests-hint" className="hint-text">
-            Enter a number between 1 and 10
-          </span>
-          {errors.guests && (
-            <div id="guests-error" className="error-message" role="alert">
-              {errors.guests}
-            </div>
-          )}
         </div>
 
         <div className="form-field">
@@ -211,8 +184,7 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             required
             aria-required="true"
             aria-labelledby="occasion-label"
-            aria-invalid={!!errors.occasion}
-            aria-describedby={`occasion-instructions ${errors.occasion ? "occasion-error" : ""}`}
+            className={!formData.occasion ? "error-field" : ""}
           >
             <option value="">Select an occasion</option>
             <option value="Birthday">Birthday</option>
@@ -235,14 +207,6 @@ function BookingForm({ availableTimes, dispatch, submitForm }) {
             <option value="Something new">Something new</option>
             <option value="Other">Other</option>
           </select>
-          <span id="occasion-instructions" className="sr-only">
-            Select an occasion for your reservation
-          </span>
-          {errors.occasion && (
-            <div id="occasion-error" className="error-message" role="alert">
-              {errors.occasion}
-            </div>
-          )}
         </div>
 
         <button 

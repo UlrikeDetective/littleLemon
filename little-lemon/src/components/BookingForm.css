@@ -148,3 +148,27 @@ select:focus + label {
   margin-top: 0.5rem;
   font-style: normal;
 }
+
+/* Default field styling */
+input,
+select {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Error styling for empty fields */
+.error-field {
+  border: 2px solid red;
+  outline: none;
+}
+
+/* Add focus styling for better accessibility */
+input:focus,
+select:focus {
+  border: 2px solid #495E57;
+  outline: none;
+}
