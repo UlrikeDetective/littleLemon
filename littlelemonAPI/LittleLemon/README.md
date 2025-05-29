@@ -37,6 +37,8 @@ LittleLemon/
 2. Navigate to the project directory.
 3. Create a virtual environment using pipenv:
    ```
+   python3 -m venv lemon_env
+   source lemon_env/bin/activate
    pipenv install
    ```
 4. Activate the virtual environment:

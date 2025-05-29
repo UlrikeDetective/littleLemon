@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import MenuItem, Category, Order, User
+from .models import MenuItem, Category, Order
+from django.contrib.auth.models import User
 
 class MenuItemSerializer(serializers.ModelSerializer):
     class Meta:

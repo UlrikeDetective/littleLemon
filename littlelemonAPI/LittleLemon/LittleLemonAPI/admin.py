@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import MenuItem, Category, Order, UserProfile  # Import your models here
+from .models import MenuItem, Category, Order, UserProfile  # Use relative import
 
 # Register your models here
 admin.site.register(MenuItem)

@@ -1,15 +1,18 @@
-from django.shortcuts import render
-from rest_framework import viewsets
-from .models import MenuItem, Category
-from .serializers import MenuItemSerializer, CategorySerializer
+from rest_framework import generics
+from .models import MenuItem, Category, Order
+from .serializers import MenuItemSerializer, CategorySerializer, OrderSerializer
 
-class MenuItemViewSet(viewsets.ModelViewSet):
+class MenuItemList(generics.ListCreateAPIView):
     queryset = MenuItem.objects.all()
     serializer_class = MenuItemSerializer
 
-class CategoryViewSet(viewsets.ModelViewSet):
+class CategoryList(generics.ListCreateAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+class OrderList(generics.ListCreateAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
 
 def home(request):
     return render(request, 'home.html')

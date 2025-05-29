@@ -1,13 +1,10 @@
 from django.test import TestCase
-from .models import YourModelName  # Replace with your actual model name
+from .models import MenuItem
 
-class YourModelNameTests(TestCase):  # Replace with your actual model name
+class MenuItemTests(TestCase):
     def setUp(self):
-        # Set up any initial data for your tests here
-        pass
+        MenuItem.objects.create(name="Pizza", description="Cheese Pizza", price=10.99, category_id=1)
 
-    def test_example(self):
-        # Example test case
-        self.assertEqual(1 + 1, 2)  # Replace with your actual test logic
-
-    # Add more test methods as needed to cover your application's functionality
+    def test_menu_item_name(self):
+        item = MenuItem.objects.get(name="Pizza")
+        self.assertEqual(item.name, "Pizza")
