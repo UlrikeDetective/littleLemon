@@ -1,5 +1,5 @@
-Superuser's username: admin  
-Superuser's password: admin123  
+Superuser's username: MeMe  
+Superuser's password: 1234
 
 Other users created:  
 - Manager: manager1  

@@ -49,7 +49,10 @@ LittleLemon/
    ```
    python manage.py migrate
    ```
+If there are issus with migrations, you can reset the database by deleting the `db.sqlite3` file and running the migrations again or 
 
+find . -name "*.pyc" -delete
+find . -name "__pycache__" -type d -exec rm -r {} +
 ## Usage
 
 - Start the development server:
@@ -63,6 +66,30 @@ LittleLemon/
 - Admin functionalities for managing users, menu items, and orders.
 - User functionalities for registration, login, and order management.
 - API endpoints for browsing menu items and categories.
+  
+## After running python manage.py makemigrations and python manage.py migrate, your next steps are:
+
+Create a superuser (admin account) so you can access the Django admin panel:
+
+Follow the prompts to set a username, email, and password.
+
+(Optional) Load initial data if you have fixtures or want to pre-populate your database.
+
+Start the development server:
+
+Access the admin panel in your browser at http://127.0.0.1:8000/admin/ and log in with your superuser credentials.
+
+Test your API endpoints at:
+
+http://127.0.0.1:8000/api/menu-items/
+http://127.0.0.1:8000/api/categories/
+http://127.0.0.1:8000/api/orders/
+(Optional) Register and log in users using Djoser endpoints if you have them set up.
+
+Document any created users and passwords in notes.txt for submission.
+
+
+
 
 ## Submission
 
