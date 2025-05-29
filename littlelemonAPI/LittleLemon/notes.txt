@@ -1,0 +1,10 @@
+Superuser's username: admin  
+Superuser's password: admin123  
+
+Other users created:  
+- Manager: manager1  
+  Password: manager123  
+- Delivery Crew: delivery1  
+  Password: delivery123  
+- Customer: customer1  
+  Password: customer123  
