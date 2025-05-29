@@ -84,7 +84,9 @@ Test your API endpoints at:
 http://127.0.0.1:8000/api/menu-items/
 http://127.0.0.1:8000/api/categories/
 http://127.0.0.1:8000/api/orders/
-(Optional) Register and log in users using Djoser endpoints if you have them set up.
+
+and look at Open your browser and go to:
+http://127.0.0.1:8000/admin/
 
 Document any created users and passwords in notes.txt for submission.
 

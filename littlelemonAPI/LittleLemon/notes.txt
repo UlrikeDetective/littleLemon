@@ -3,8 +3,10 @@ Superuser's password: 1234
 
 Other users created:  
 - Manager: manager1  
-  Password: manager123  
+  Password: MeMe1234  
 - Delivery Crew: delivery1  
-  Password: delivery123  
+  Password: MeMe1234 
 - Customer: customer1  
-  Password: customer123  
+  Password: MeMe1234
+- Customer: customer2  
+  Password: MeMe1234
