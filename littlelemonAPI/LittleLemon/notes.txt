@@ -10,3 +10,14 @@ Other users created:
   Password: MeMe1234
 - Customer: customer2  
   Password: MeMe1234
+
+  python manage.py makemigrations
+  python manage.py migrate
+  python manage.py createsuperuser --username MeMe --email
+  python manage.py runserver
+
+  MySQL Terminal Commands:
+  mysql -u root -p
+  CREATE DATABASE littlelemon;
+  USE littlelemon;
+  Show tables;
