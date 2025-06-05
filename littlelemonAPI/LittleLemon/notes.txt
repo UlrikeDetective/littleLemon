@@ -21,3 +21,4 @@ Other users created:
   CREATE DATABASE littlelemon;
   USE littlelemon;
   Show tables;
+exit
